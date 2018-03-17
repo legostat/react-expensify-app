@@ -1,0 +1,35 @@
+.button {
+  display: inline-block;
+  background: $blue;
+  border: none;
+  border-radius: 3px;
+  // box-shadow: 1px 3px 10px rgba(0, 0, 0, .8);    
+  color: #fff;
+  font-size: $font-size-large;
+  font-weight: 300;
+  line-height: 1;
+  padding: $s-size;
+  text-decoration: none;
+  transition: all .2s;
+  &:hover {
+    // box-shadow: 2px 4px 12px rgba(0, 0, 0, .7);
+    background: lighten($blue, 8%);
+    color: #fefefe;
+  }
+
+  &--link {
+    background: none;
+    &:hover {
+      background: none;
+      color: #efefef;
+    }
+  }
+
+  &--secondary {
+    background: $grey;
+    &:hover {
+      background: lighten($grey, 8%);
+      color: #fefefe;
+    }
+  }  
+}
