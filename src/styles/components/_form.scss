@@ -9,4 +9,23 @@
     margin: 0 0 $m-size 0;
     font-style: italic;
   }
+
+  &__group {
+    display: flex;
+    flex-direction: column;    
+
+    & > input {
+      margin-bottom: $m-size;
+    }
+    
+    @media (min-width: $desktop-breakpoint - 15rem) {
+      flex-direction: row;    
+
+      & > input {
+        flex-grow: 1;
+        margin-right: $m-size;
+        margin-bottom: 0;
+      }
+    }
+  }
 }
