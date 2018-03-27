@@ -1,5 +1,8 @@
 .text-input {
   border: 1px solid #cacccd;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
   height: 50px;
   font-size: $font-size-large;
   font-weight: 300;
@@ -13,4 +16,16 @@
 .textarea {
   @extend .text-input;
   height: 10rem;
+}
+
+.DateRangePickerInput {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  & * {
+    cursor: pointer;
+  }
+}
+
+.SingleDatePickerInput {
+  @extend .DateRangePickerInput;
 }

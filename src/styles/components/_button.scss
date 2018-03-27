@@ -2,8 +2,8 @@
   display: inline-block;
   background: $blue;
   border: none;
-  border-radius: 3px;
-  // box-shadow: 1px 3px 10px rgba(0, 0, 0, .8);    
+  border-radius: 5px;
+  box-shadow: 2px 5px 12px rgba(0, 0, 0, .5);   
   color: #fff;
   font-size: $font-size-large;
   font-weight: 300;
@@ -12,15 +12,17 @@
   text-decoration: none;
   transition: all .2s;
   &:hover {
-    // box-shadow: 2px 4px 12px rgba(0, 0, 0, .7);
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, .6);
     background: lighten($blue, 8%);
     color: #fefefe;
   }
 
   &--link {
     background: none;
+    box-shadow: none;
     &:hover {
       background: none;
+      box-shadow: none;
       color: #efefef;
     }
   }
@@ -31,5 +33,11 @@
       background: lighten($grey, 8%);
       color: #fefefe;
     }
-  }  
+  }
+
+  &--login {
+    padding-left: 2.5rem;
+    text-align: left;
+    margin: $s-size .5rem;    
+  }
 }

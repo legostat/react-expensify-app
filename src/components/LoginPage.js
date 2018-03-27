@@ -1,4 +1,8 @@
 import React from 'react';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faGoogle from '@fortawesome/fontawesome-free-brands/faGoogle';
+import faFacebook from '@fortawesome/fontawesome-free-brands/faFacebook';
+import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
 import {connect} from 'react-redux';
 import {startLoginWithGoogle, startLoginWithFacebook, startLoginWithTwitter} from '../actions/auth';
 
@@ -7,9 +11,26 @@ export const LoginPage = ({startLoginWithGoogle, startLoginWithFacebook, startLo
     <div className="box-layout__box">
       <h1 className="box-layout__title">Expensify</h1>
       <p className="box-layout__text">It's time to get your expenses under control.</p>
-      <button className="button" onClick={startLoginWithGoogle}>Login with Google</button>
-      <button className="button" onClick={startLoginWithFacebook}>Login with Facebook</button>
-      <button className="button" onClick={startLoginWithTwitter}>Login with Twitter</button>
+      <div className="box-layout__buttons">
+        <button
+        className="button button--login" 
+        onClick={startLoginWithGoogle}>
+          <FontAwesomeIcon icon={faGoogle} />
+          Login with Google
+        </button>
+        <button 
+          className="button button--login"
+          onClick={startLoginWithFacebook}>
+            <FontAwesomeIcon icon={faFacebook} />
+            Login with Facebook
+        </button>
+        <button 
+          className="button button--login" 
+          onClick={startLoginWithTwitter}>
+            <FontAwesomeIcon icon={faTwitter} />
+            Login with Twitter
+        </button>
+      </div>
     </div>    
   </div>
 );

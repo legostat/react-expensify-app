@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faTrash from '@fortawesome/fontawesome-free-solid/faTrashAlt';
 import ExpenseForm from './ExpenseForm';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
@@ -44,6 +46,7 @@ export class EditExpensePage extends React.Component {
             className="button button--secondary"
             onClick={this.handleOpenModal}
           >
+            <FontAwesomeIcon icon={faTrash} />
             Remove Expense
           </button>
           <Modal

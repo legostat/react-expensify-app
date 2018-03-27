@@ -1,5 +1,7 @@
 import React from 'react';
 import moment from 'moment';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faSave from '@fortawesome/fontawesome-free-solid/faSave';
 import { SingleDatePicker} from 'react-dates';
 
 export default class ExpenseForm extends React.Component {
@@ -66,21 +68,23 @@ export default class ExpenseForm extends React.Component {
           value={this.state.description}
           onChange={this.onDescriptionChange}
         />
-        <input
-          type="text"
-          className="text-input"
-          placeholder="Amount"
-          value={this.state.amount}
-          onChange={this.onAmountChange}
-        />
-        <SingleDatePicker
-          date={this.state.createdAt}
-          onDateChange={this.onDateChange}
-          focused={this.state.calendarFocused}
-          onFocusChange={this.onFocusChange}
-          numberOfMonths={1}
-          isOutsideRange={() => false}
-        />
+        <div className="form__group">
+          <input
+            type="text"
+            className="text-input"
+            placeholder="Amount"
+            value={this.state.amount}
+            onChange={this.onAmountChange}
+          />          
+          <SingleDatePicker            
+            date={this.state.createdAt}
+            onDateChange={this.onDateChange}
+            focused={this.state.calendarFocused}
+            onFocusChange={this.onFocusChange}
+            numberOfMonths={1}
+            isOutsideRange={() => false}
+          />
+        </div>
         <textarea
           className="textarea"
           placeholder="A note for your expense (optional)"
@@ -89,7 +93,11 @@ export default class ExpenseForm extends React.Component {
         >
         </textarea>
         <div>
-          <button className="button">Save Expense</button>
+          <button 
+            className="button">
+              <FontAwesomeIcon icon={faSave} />
+              Save Expense
+          </button>
         </div>
       </form>      
     );
