@@ -19,7 +19,7 @@ export const LoginPage = ({
     <div className="box-layout__box">
       <h1 className="box-layout__title">Expensify</h1>
       <p className="box-layout__text">
-        It's time to get your expenses under control.
+        It&apos;s time to get your expenses under control.
       </p>
       <div className="box-layout__buttons">
         <button className="button button--login" onClick={startLoginWithGoogle}>
