@@ -1,47 +1,44 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import Modal from 'react-modal';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faTrash from '@fortawesome/fontawesome-free-solid/faTrashAlt';
-import ExpenseForm from './ExpenseForm';
-import { startEditExpense, startRemoveExpense } from '../actions/expenses';
+import React from "react";
+import { connect } from "react-redux";
+import Modal from "react-modal";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import faTrash from "@fortawesome/fontawesome-free-solid/faTrashAlt";
+import ExpenseForm from "./ExpenseForm";
+import { startEditExpense, startRemoveExpense } from "../actions/expenses";
 
-Modal.setAppElement('#app');
+Modal.setAppElement("#app");
 
 export class EditExpensePage extends React.Component {
   constructor() {
     super();
     this.state = {
       modalIsOpen: false
-    }
+    };
   }
   handleOpenModal = () => {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   };
   handleCloseModal = () => {
-    this.setState({modalIsOpen: false});
-  }
-  onSubmit = (expense) => {    
+    this.setState({ modalIsOpen: false });
+  };
+  onSubmit = expense => {
     this.props.startEditExpense(this.props.expense.id, expense);
-    this.props.history.push('/');    
+    this.props.history.push("/");
   };
   onRemoveExpense = () => {
-    this.props.startRemoveExpense({id: this.props.expense.id});
-    this.props.history.push('/');
+    this.props.startRemoveExpense({ id: this.props.expense.id });
+    this.props.history.push("/");
   };
-  render () {
+  render() {
     return (
       <div>
         <div className="page-header">
           <div className="content-container">
-            <h2 className="page-header__title">Edit Expense</h2>  
+            <h2 className="page-header__title">Edit Expense</h2>
           </div>
         </div>
         <div className="content-container">
-          <ExpenseForm
-            expense={this.props.expense}
-            onSubmit={this.onSubmit}
-          />
+          <ExpenseForm expense={this.props.expense} onSubmit={this.onSubmit} />
           <button
             className="button button--secondary"
             onClick={this.handleOpenModal}
@@ -50,22 +47,21 @@ export class EditExpensePage extends React.Component {
             Remove Expense
           </button>
           <Modal
-            isOpen={this.state.modalIsOpen}           
-            onRequestClose={this.handleCloseModal}                      
+            isOpen={this.state.modalIsOpen}
+            onRequestClose={this.handleCloseModal}
             contentLabel="Remove Expense"
             closeTimeoutMS={200}
             className="modal"
             overlayClassName="modal-overlay"
           >
-            <h3 className="modal__title">Do you realy want to remove expense?</h3>
+            <h3 className="modal__title">
+              Do you realy want to remove expense?
+            </h3>
             <div className="modal__body">
-              <button 
-                className="button"
-                onClick={this.onRemoveExpense}
-              >
+              <button className="button" onClick={this.onRemoveExpense}>
                 Yes
               </button>
-              <button 
+              <button
                 className="button button--secondary"
                 onClick={this.handleCloseModal}
               >
@@ -76,16 +72,19 @@ export class EditExpensePage extends React.Component {
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 const mapStateToProps = (state, props) => ({
-  expense: state.expenses.find((expense) => expense.id === props.match.params.id)
+  expense: state.expenses.find(expense => expense.id === props.match.params.id)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
   startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
-  startRemoveExpense: (data) => dispatch(startRemoveExpense(data))
+  startRemoveExpense: data => dispatch(startRemoveExpense(data))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditExpensePage);

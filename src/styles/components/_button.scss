@@ -3,16 +3,16 @@
   background: $blue;
   border: none;
   border-radius: 5px;
-  box-shadow: 2px 5px 12px rgba(0, 0, 0, .5);   
+  box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.5);
   color: #fff;
   font-size: $font-size-large;
   font-weight: 300;
   line-height: 1;
   padding: $s-size;
   text-decoration: none;
-  transition: all .2s;
+  transition: all 0.2s;
   &:hover {
-    box-shadow: 1px 3px 8px rgba(0, 0, 0, .6);
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.6);
     background: lighten($blue, 8%);
     color: #fefefe;
   }
@@ -38,6 +38,6 @@
   &--login {
     padding-left: 2.5rem;
     text-align: left;
-    margin: $s-size .5rem;    
+    margin: $s-size 0.5rem;
   }
 }
