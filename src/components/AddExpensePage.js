@@ -10,7 +10,7 @@ export class AddExpensePage extends React.Component {
   };
   render() {
     return (
-      <div>
+      <React.Fragment>
         <div className="page-header">
           <div className="content-container">
             <h2 className="page-header__title">Add Expense</h2>
@@ -19,7 +19,7 @@ export class AddExpensePage extends React.Component {
         <div className="content-container">
           <ExpenseForm onSubmit={this.onSubmit} />
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

@@ -31,7 +31,7 @@ export class EditExpensePage extends React.Component {
   };
   render() {
     return (
-      <div>
+      <React.Fragment>
         <div className="page-header">
           <div className="content-container">
             <h2 className="page-header__title">Edit Expense</h2>
@@ -70,7 +70,7 @@ export class EditExpensePage extends React.Component {
             </div>
           </Modal>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
@@ -79,6 +79,7 @@ const mapStateToProps = (state, props) => ({
   expense: state.expenses.find(expense => expense.id === props.match.params.id)
 });
 
+// eslint-disable-next-line no-unused-vars
 const mapDispatchToProps = (dispatch, props) => ({
   startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
   startRemoveExpense: data => dispatch(startRemoveExpense(data))
