@@ -1,10 +1,8 @@
-import { Fragment } from "react";
-
 function App() {
   return (
-    <Fragment>
+    <div className="app">
       <h1>Expensify App</h1>
-    </Fragment>
+    </div>
   );
 }
 
